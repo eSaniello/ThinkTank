@@ -1,0 +1,46 @@
+<?php
+    session_start();
+?>
+<?php
+   if(isset($_POST["register"]))
+   {
+        header("Location: register.php");
+   }  
+   elseif(isset($_POST["login"]))
+   {
+       include "dbh.php";
+       $name = mysqli_real_escape_string($connection , $_POST["user_name"]);
+       $pw = mysqli_real_escape_string($connection , $_POST["password"]);
+
+       if(empty($name) || empty($pw))
+       {
+           header("Location: index.php?login=empty");
+           exit();
+       }
+       else
+       {
+            $sql = "SELECT * from login where `user_name`='$name';";
+            $query = mysqli_query($connection , $sql);
+            $row = mysqli_fetch_array($query);
+
+            $pw_verify = password_verify($pw , $row['password']);
+
+            if($row["user_name"] == $name && $pw_verify == true)
+            {
+                $_SESSION['user_name'] = $name;
+                header("Location: game.php?login=succes");
+                exit();
+            }
+            else
+            {
+                header("Location: index.php?login=failed");
+                exit();
+            }
+       }
+   }
+   else
+   {
+       header("location: index.php?error");
+       exit();
+   }
+?>
