@@ -28,6 +28,8 @@
             if($row["user_name"] == $name && $pw_verify == true)
             {
                 $_SESSION['user_name'] = $name;
+                $_SESSION['firstname'] = $row["firstname"];
+                $_SESSION['lastname'] = $row["lastname"];
                 header("Location: game.php?login=succes");
                 exit();
             }

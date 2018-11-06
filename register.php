@@ -15,10 +15,30 @@
         <h1>Register</h1>
         <br>
         <?php
+        if(isset($_GET["firstname"]))
+        {
+            $firstname = $_GET["firstname"];
+            echo '<input type="text" placeholder="Firstname" name="firstname" value="'.$firstname.'" class="gen_input"><br><br>';
+        }
+        else
+        {
+            echo '<input type="text" placeholder="Firstname" name="firstname" class="gen_input"><br><br>';
+        }
+
+        if(isset($_GET["lastname"]))
+        {
+            $lastname = $_GET["lastname"];
+            echo '<input type="text" placeholder="Lastname" name="lastname" value="'.$lastname.'" class="gen_input"><br><br>';
+        }
+        else
+        {
+            echo '<input type="text" placeholder="Lastname" name="lastname" class="gen_input"><br><br>';
+        }
+
         if(isset($_GET["user_name"]))
         {
             $user = $_GET["user_name"];
-            echo '<input type="text" placeholder="User name" name="user_name" value="'.$user.'" class="gen_input"><br>';
+            echo '<input type="text" placeholder="User name" name="user_name" value="'.$user.'" class="gen_input"><br><br>';
         }
         else
         {
@@ -27,7 +47,7 @@
         ?>
         <br>    
         <input type="password" placeholder="Password" name="password" class="gen_input"><br><br>  
-        <input type="password" placeholder="verify password" name="password01" class="gen_input"><br><br>
+        <input type="password" placeholder="Verify password" name="password01" class="gen_input"><br><br>
         <button type="submit" name="register" class='login'>Register</button><br><br>
     </form>
     <?php

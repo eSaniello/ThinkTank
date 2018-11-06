@@ -19,7 +19,7 @@ session_start();
 
     <?php
         if(isset($_SESSION["user_name"]))
-            echo "<h1>Welcome to ThinkTank ". ucfirst($_SESSION['user_name']) . "</h1>";
+            echo "<h1>Welcome to ThinkTank ". ucfirst($_SESSION['firstname']) ." ". ucfirst($_SESSION['lastname']) . " a.k.a " . ucfirst($_SESSION['user_name']) . "</h1>";
 
         //logout
         if(isset($_POST["logout"])){
@@ -30,10 +30,8 @@ session_start();
 
     <h3>OPGELET! U moet een werkende internet verbinding hebben om door te gaan.</h3>
 
-    <iframe width = "640" height = "480" frameborder = "0" scrolling = "no" src = "http://www.4j.com/embed/Mini-Scientist"></iframe>
-    <iframe width='720' height='1280' frameborder='0' scrolling='no' src='http://www.4j.com/embed/Brain-Games'></iframe>
-    <iframe width='480' height='680' frameborder='0' scrolling='no' src='http://www.4j.com/embed/Whats-Inside-The-Box'></iframe>    
-    <iframe width='600' height='400' frameborder='0' scrolling='no' src='http://www.4j.com/embed/Airbender'></iframe>
+    <br>
+    <h2>Games moeten hier komen</h2>
 
 </body>
 </html>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 02, 2018 at 01:09 PM
+-- Generation Time: Nov 06, 2018 at 03:22 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 5.6.38
 
@@ -32,6 +32,8 @@ USE `thinktank`;
 
 CREATE TABLE `login` (
   `user_id` int(11) NOT NULL,
+  `firstname` varchar(512) NOT NULL,
+  `lastname` varchar(512) NOT NULL,
   `user_name` varchar(256) NOT NULL,
   `password` varchar(1024) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -40,8 +42,8 @@ CREATE TABLE `login` (
 -- Dumping data for table `login`
 --
 
-INSERT INTO `login` (`user_id`, `user_name`, `password`) VALUES
-(1, 'shaniel', '$2y$10$uPB9fFdiPlOU4ZiPuRqyDujabTtnj1rcd6lnWy77bpyYOAWPmz1li');
+INSERT INTO `login` (`user_id`, `firstname`, `lastname`, `user_name`, `password`) VALUES
+(4, 'Shaniel', 'Samadhan', 'esaniello', '$2y$10$8AzyFDaBgnQ/T1oQUYcPmegDYjBVe9ty3Ybs5Iakr2hswtUnYuZFS');
 
 --
 -- Indexes for dumped tables
@@ -61,7 +63,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
