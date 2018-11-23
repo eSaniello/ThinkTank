@@ -1,0 +1,79 @@
+/// Mixin to place items on a circle
+/// @author Hugo Giraudel
+/// @author Ana Tudor
+/// @param {Integer} $item-count - Number of items on the circle
+/// @param {Length} $circle-size - Large circle size
+/// @param {Length} $item-size - Single item size
+@mixin on-circle($item-count, $circle-size, $item-size) {
+  position: relative;
+  width:  $circle-size;
+  height: $circle-size;
+  padding: 0;
+  border-radius: 50%; 
+  list-style: none;       
+  
+  > * {
+    display: block;
+    position: absolute;
+    top:  50%; 
+    left: 50%;
+    width:  $item-size;
+    height: $item-size;
+    margin: -($item-size / 2);
+  
+    $angle: (360 / $item-count);
+    $rot: 0;
+
+    @for $i from 1 through $item-count {
+      &:nth-of-type(#{$i}) {
+        transform: 
+          rotate($rot * 1deg) 
+          translate($circle-size / 2) 
+          rotate($rot * -1deg);
+      }
+
+      $rot: $rot + $angle;
+    }
+  }
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.circle-container {
+  @include on-circle($item-count: 24, $circle-size: 24em, $item-size: 1.2em); 
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  //border: solid 5px tomato;
+  
+  .light { 
+    display: block; 
+    max-width: 100%; 
+    border-radius: 50%;
+    filter: grayscale(100%);
+    border: solid 5px tomato;
+    transition: .05s;
+  }
+  
+  .light.lit {
+    filter: grayscale(0) !important;
+    background: tomato;
+  }
+  
+  .light.target {
+    filter: grayscale(100%);
+    border: solid 5px green;
+    background: green;
+  }
+  
+  .light.target.lit {}
+}
+
+.messages {
+  position: absolute;
+  bottom: 0em;
+  padding: 10px;
+}

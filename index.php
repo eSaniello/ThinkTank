@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>||ThinkTank|| Log In/Register</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
 </head>
 <body class= "index_body">
   
     <div align="center">
 
-    <form method="POST" action="login.php" class="form">
+    <form method="POST" action="backend/login.php" class="form">
         <h1>Log in</h1>
         <br>    
         <?php

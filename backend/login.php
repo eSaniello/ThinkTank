@@ -4,17 +4,17 @@
 <?php
    if(isset($_POST["register"]))
    {
-        header("Location: register.php");
+        header("Location: ../front-end/register.php");
    }  
    elseif(isset($_POST["login"]))
    {
-       include "dbh.php";
+       include "../database/dbh.php";
        $name = mysqli_real_escape_string($connection , $_POST["user_name"]);
        $pw = mysqli_real_escape_string($connection , $_POST["password"]);
 
        if(empty($name) || empty($pw))
        {
-           header("Location: index.php?login=empty");
+           header("Location: ../index.php?login=empty");
            exit();
        }
        else
@@ -30,19 +30,19 @@
                 $_SESSION['user_name'] = $name;
                 $_SESSION['firstname'] = $row["firstname"];
                 $_SESSION['lastname'] = $row["lastname"];
-                header("Location: game.php?login=succes");
+                header("Location: ../front-end/game.php?login=succes");
                 exit();
             }
             else
             {
-                header("Location: index.php?login=failed");
+                header("Location: ../index.php?login=failed");
                 exit();
             }
        }
    }
    else
    {
-       header("location: index.php?error");
+       header("location: ../index.php?error");
        exit();
    }
 ?>
