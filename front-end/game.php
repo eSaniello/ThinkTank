@@ -47,6 +47,9 @@ session_start();
     <h2>Games moeten hier komen</h2>
 
 
+<a href="leaderboard.php">Leaderboard</a>
+
+
   <div id="game">
   <div class="circle-container">
   <div v-for="light in lights" :key="light.key" class="light" :class="{lit: light.key == lit, target: light.key == 0}"></div>

@@ -27,6 +27,7 @@
 
             if($row["user_name"] == $name && $pw_verify == true)
             {
+                //login succesfull
                 $_SESSION['user_name'] = $name;
                 $_SESSION['firstname'] = $row["firstname"];
                 $_SESSION['lastname'] = $row["lastname"];
