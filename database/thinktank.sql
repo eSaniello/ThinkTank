@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2018 at 01:54 AM
+-- Generation Time: Nov 30, 2018 at 03:21 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 5.6.38
 
@@ -32,9 +32,9 @@ USE `thinktank`;
 
 CREATE TABLE `game_scores` (
   `game_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `game_title` varchar(255) NOT NULL,
-  `score` mediumtext NOT NULL
+  `user_id` int(11) DEFAULT NULL,
+  `game_title` varchar(1024) DEFAULT NULL,
+  `score` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -42,10 +42,8 @@ CREATE TABLE `game_scores` (
 --
 
 INSERT INTO `game_scores` (`game_id`, `user_id`, `game_title`, `score`) VALUES
-(1, 0, 'Light-reflex-Game', '1'),
-(2, 0, 'Light-reflex-Game', '2'),
-(3, 0, 'Light-reflex-Game', '6'),
-(4, 0, 'Light-reflex-Game', '1');
+(1, 5, 'Light-reflex-Game', 5),
+(2, 6, 'Light-reflex-Game', 6);
 
 -- --------------------------------------------------------
 
@@ -66,8 +64,8 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`user_id`, `firstname`, `lastname`, `user_name`, `password`) VALUES
-(4, 'Shaniel', 'Samadhan', 'esaniello', '$2y$10$8AzyFDaBgnQ/T1oQUYcPmegDYjBVe9ty3Ybs5Iakr2hswtUnYuZFS'),
-(5, 'test', 'tset', 'tttt', '$2y$10$32f5IQRe8kf.L4ZdFHb5Buy/yncdkdlWM6Ph.CIxqbXFJcWiOSpcG');
+(5, 'Shaniel', 'Samadhan', 'esaniello', '$2y$10$8AzyFDaBgnQ/T1oQUYcPmegDYjBVe9ty3Ybs5Iakr2hswtUnYuZFS'),
+(6, 'raveena', 'boedhoe', 'ravb', '$2y$10$PuSLwCLy07gJM5m3sZryiepA9GaBt7biWJ8cUuwYf8QJJBlt89KT.');
 
 --
 -- Indexes for dumped tables
@@ -77,7 +75,8 @@ INSERT INTO `login` (`user_id`, `firstname`, `lastname`, `user_name`, `password`
 -- Indexes for table `game_scores`
 --
 ALTER TABLE `game_scores`
-  ADD PRIMARY KEY (`game_id`);
+  ADD PRIMARY KEY (`game_id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `login`
@@ -93,13 +92,23 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `game_scores`
 --
 ALTER TABLE `game_scores`
-  MODIFY `game_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `game_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `game_scores`
+--
+ALTER TABLE `game_scores`
+  ADD CONSTRAINT `game_scores_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `login` (`user_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

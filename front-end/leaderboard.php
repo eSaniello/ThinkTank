@@ -1,19 +1,14 @@
 <?php
 include "../database/dbh.php";
 
-$sql = "SELECT * from game_scores";
-$sql_uname = "SELECT * from login where  user_id = '4'";
+$sql = "SELECT login.firstname, game_scores.game_title, game_scores.score FROM game_scores INNER JOIN login ON game_scores.user_id=login.user_id";
 
 $query = mysqli_query($connection, $sql);
 
-$query_uname = mysqli_query($connection, $sql_uname);
-
-while($row = mysqli_fetch_array($query)){
-    while( $row_uname = mysqli_fetch_array($query_uname)){
-        echo $row_uname['firstname'] . "  ";
-        echo $row["game_title"] ."  ";
-        echo $row['score'] ." <br>";
-    }
+while( $row = mysqli_fetch_array($query)){
+    echo ucfirst($row['firstname'] . "  "); //ucfirst() is een functie waarmee je de eerste letter van een woord tot een hoofdletter maakt.
+    echo $row["game_title"] ."  ";
+    echo $row['score'] ." <br>";
 }
 
 ?>

@@ -33,7 +33,8 @@ session_start();
     <?php
         if(isset($_SESSION["user_name"]))
             echo "<h1>Welcome to ThinkTank ". ucfirst($_SESSION['firstname']) ." ". ucfirst($_SESSION['lastname']) . " a.k.a " . ucfirst($_SESSION['user_name']) . "</h1>";
-
+            //ucfirst() is een functie waarmee je de eerste letter van een woord tot een hoofdletter maakt.
+            
         //logout
         if(isset($_POST["logout"])){
             session_abort();
