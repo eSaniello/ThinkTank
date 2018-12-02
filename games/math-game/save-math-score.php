@@ -1,14 +1,14 @@
 <?php
 session_start();
 
-include "../database/dbh.php";
+include "../../database/dbh.php";
 
 if(isset($_SESSION["user_name"])){
 
     if($_POST["data"]){
         $score = $_POST['data'];
         
-        $sql = "INSERT INTO game_scores (user_id, game_title, score) VALUES (" .$_SESSION['user_id']. ", 'Light-reflex-Game', '$score')";
+        $sql = "INSERT INTO game_scores (user_id, game_title, score) VALUES (" .$_SESSION['user_id']. ", 'Balloon-math-Game', '$score')";
         
         $query = mysqli_query($connection,$sql);
 

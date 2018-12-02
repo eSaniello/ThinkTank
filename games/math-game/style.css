@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css?family=Hammersmith+One");
+body {
+  background: #1d1f20;
+  font-family: 'Hammersmith One', sans-serif;
+}
+body .hava {
+  margin: 50px auto;
+  width: 650px;
+  height: 450px;
+  background: #39bec3;
+  overflow: hidden;
+  position: relative;
+}
+body .hava .deniz {
+  width: 650px;
+  height: 75px;
+  transition: all ease-out .7s;
+  position: absolute;
+  bottom: 0;
+  background: #204d62;
+}
+body .hava .damla {
+  position: absolute;
+  width: 46px;
+  border-radius: 50%;
+  height: 46px;
+  background: #204d62;
+  border: 3px solid white;
+  color: white;
+  font-size: 20px;
+}
+body .hava .damla span {
+  display: inline-block;
+  width: 23px;
+  float: left;
+}
+body .hava .damla .isaret {
+  height: 46px;
+  text-align: right;
+  line-height: 69px;
+}
+body .hava .damla .sayia {
+  height: 23px;
+  text-align: left;
+}
+body .hava .damla .sayib {
+  height: 23px;
+  text-align: left;
+}
+body .hava .damlaa2 {
+  border: solid 3px yellow;
+  box-shadow: 0px 0px 5px yellow;
+}
+body .hava .giris {
+  width: 80px;
+  height: 40px;
+  background: #1c4054;
+  bottom: 10px;
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+body .hava .giris input {
+  width: 80px;
+  height: 40px;
+  border: 0;
+  background: rgba(0, 0, 0, 0);
+  color: white;
+  text-align: center;
+  font-size: 25px;
+}
+body .hava .giris input:focus {
+  outline: 0;
+}
+body .hava button {
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  background: #f1693c;
+  color: white;
+  position: absolute;
+  text-align: center;
+  z-index: 10;
+  text-decoration: none;
+  line-height: 40px;
+  font-size: 18px;
+  border-bottom: 3px solid #c84e2a;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  cursor: pointer;
+}
+
+.score{
+  text-align: right;
+  padding-right: 10px;
+  padding-top: 10px;
+  font-size: 30px;
+  color: red;
+}
