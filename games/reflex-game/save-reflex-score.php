@@ -8,14 +8,14 @@ if(isset($_SESSION["user_name"])){
     if($_POST["data"]){
         $score = $_POST['data'];
         
-        $sql_select = "SELECT * FROM game_scores WHERE user_id =". $_SESSION['user_id'];
+        $sql_select = "SELECT * FROM game_scores WHERE user_id ='". $_SESSION['user_id'] ."' AND game_title='Light-reflex-Game'";
         $query_select = mysqli_query($connection, $sql_select);
         $result_select = mysqli_fetch_array($query_select);
 
         if($result_select['score'] != null){
 
             if($score > $result_select['score']){
-                $sql_update = "UPDATE game_scores SET score ='$score' WHERE user_id=". $_SESSION['user_id'];
+                $sql_update = "UPDATE game_scores SET score ='$score' WHERE user_id='". $_SESSION['user_id'] ."' AND game_title='Light-reflex-Game'";
                 $query_update = mysqli_query($connection,$sql_update);
                 echo "Score updated succesfully!";
             }
