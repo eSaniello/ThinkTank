@@ -86,6 +86,19 @@ new Vue({
           }
           else
             console.log("Cancel clicked");
+
+            //using ajax to save score in database
+            $.ajax({
+              url: "save-reflex-score.php",
+              type: "post",
+              data: { data: this.score },
+              success: function (data) {
+                console.log(data);
+              }
+            });
+
+            this.tries = 10;
+            this.score = 0;
         }
       }
     }
