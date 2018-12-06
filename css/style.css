@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url(https://fonts.googleapis.com/css?family=Oswald|Roboto);
+@import url(https://fonts.googleapis.com/css?family=Acme|Roboto);
 body {
   position: absolute;
   left: 0;
@@ -75,9 +75,10 @@ body {
   cursor: pointer;
   text-align: center;
   margin: 0 auto;
-  width: 60px;
+  width: 75px;
   color: #fff;
   background-color: #ff73b3;
+  border: none;
   opacity: 1;
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
@@ -246,4 +247,14 @@ body {
   right: 20px;
   z-index: 3;
   fill: #fff;
+}
+
+#titel{
+  text-align: center;
+  position: absolute;
+  top: 10%;
+  left: 38%;
+  font-size: 100px;
+  color: antiquewhite;
+  font-family: "Acme", sans-serif;
 }
