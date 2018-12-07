@@ -35,6 +35,8 @@ new Vue({
       // listen to keydown events
       vm.$on('keydown', (keyCode) => {
          if (keyCode === keyCodes.SPACE) {
+          let audio = new Audio("../../audio/pop.wav");
+          audio.play();
            vm.handleKeySpace()
          }
       })

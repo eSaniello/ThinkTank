@@ -1,4 +1,8 @@
 $(document).ready(function() {
+    let audio = new Audio("../audio/bg.mp3");
+    audio.loop = true;
+    audio.play();
+    
     $(document).click(function() {
         $("input").select();
     });
