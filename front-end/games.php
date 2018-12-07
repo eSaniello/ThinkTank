@@ -30,7 +30,7 @@ include "../database/dbh.php";
   <a href="dashboard.php"><i></i> Dashboard</a>
   <a href="games.php"><i></i> Games</a>
   <a href="leaderboard.php"><i></i> Ranglijst</a>
-  <a href="over.html"><i></i> Over</a>
+  <a href="over.php"><i></i> Over</a>
 </div>
 
     <div class="main">
