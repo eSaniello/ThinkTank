@@ -21,6 +21,7 @@ session_start();
 <div class="topnav">
   <a class="active" href="">Menu</a>
   <a href=""><img id="logo" src="../img/logo.png" alt="Logo" /> <span>ThinkTank</span></a>
+  <span id="date"><?php echo "Date: " .date("Y/m/d"); ?></span>
     <form method="post" action="dashboard.php">
         <button type="submit" id="logout" name="logout">Logout</button>
     </form>
