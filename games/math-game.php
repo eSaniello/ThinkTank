@@ -8,8 +8,6 @@ session_start();
 <head>
   <meta charset="UTF-8">
   <title>Math Game</title>
-  
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
   
       <link rel="stylesheet" href="style.css">
@@ -29,7 +27,7 @@ session_start();
   <div class="damlalar">
   </div>
 </div>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script src='../libs/jquery-3.3.1.min.js'></script>
 
   
 

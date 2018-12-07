@@ -14,9 +14,12 @@
 
 <body>
   
-  <h1 id="titel">ThinkTank</h1>
 
   <div class="container">
+
+  <img id='logo' src="img/logo.png" alt="Logo">
+  <h1 id="titel">ThinkTank</h1>
+
   <div class="box"></div>
   <div class="container-forms">
     <div class="container-info">
@@ -24,7 +27,7 @@
         <div class="table">
           <div class="table-cell">
             <p>
-              Have an account?
+              Al een account?
             </p>
             <div class="btn">
               Log in
@@ -36,10 +39,10 @@
         <div class="table">
           <div class="table-cell">
             <p>
-              Don't have an account? 
+              Geen account? 
             </p>
             <div class="btn">
-              Sign up
+              Registreer
             </div>
           </div>
         </div>
@@ -52,7 +55,7 @@
             <form method="POST" action="backend/login.php">
               <input name="user_name" placeholder="Username" type="text" />
               <input name="password" placeholder="Password" type="Password" />
-              <input type='submit' name="login" value="Log in" class="btn" />
+              <input type='submit' name="login" value="Inloggen" class="btn" />
             </form>
           </div>
         </div>
@@ -66,14 +69,14 @@
               <input name="user_name" placeholder="Username" type="text" />
               <input name="password" placeholder="Password" type="Password" />
               <input name="password01" placeholder="Verify Password" type="Password" />
-              <input type="submit" name="register" value="Register" class="btn">
+              <input type="submit" name="register" value="Registreren" class="btn">
             </form>
         </div>
       </div>
     </div>
   </div>
 </div>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+  <script src='libs/jquery-3.3.1.min.js'></script>
   <script  src="js/index.js"></script>
 
 <?php
@@ -112,7 +115,7 @@ else
     }
     elseif($formCheck == "succes")
     {
-        header("Location: game.php?login=succes");
+        header("Location: dashboard.php?login=succes");
         exit();
     }
 }

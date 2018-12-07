@@ -126,10 +126,10 @@ $(document).ready(function() {
                             data: { data: score },
                             success: function (data) {
                               console.log(data);
+                              window.location.href = "../front-end/games.php";
                             }
                           });
-                        //////////////////
-                        score = 0;
+                        
                       }
                       else{
                         console.log("Cancel clicked");
@@ -142,50 +142,13 @@ $(document).ready(function() {
                             data: { data: score },
                             success: function (data) {
                               console.log(data);
+                              window.location.href = "../front-end/games.php";
                             }
                           });
-                        //////////////////
-                        score = 0;
+
                       }
                 }
             }
         }, sure);
     }
 });
-
-
- //using ajax to save score in database
-//  $.ajax({
-//     url: "save-reflex-score.php",
-//     type: "post",
-//     data: { data: this.score },
-//     success: function (data) {
-//       console.log(data);
-//     }
-//   });
-
-
-//php file
-// <?php
-// session_start();
-
-// include "../database/dbh.php";
-
-// if(isset($_SESSION["user_name"])){
-
-//     if($_POST["data"]){
-//         $score = $_POST['data'];
-        
-//         $sql = "INSERT INTO game_scores (user_id, game_title, score) VALUES (" .$_SESSION['user_id']. ", 'Light-reflex-Game', '$score')";
-        
-//         $query = mysqli_query($connection,$sql);
-
-//         if($query)
-//             echo " Score entered successfully!";
-//         else
-//             echo "Problem!";
-//     }
-
-// }
-
-// ?>

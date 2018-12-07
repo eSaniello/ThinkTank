@@ -32,7 +32,7 @@
                 $_SESSION['user_name'] = $name;
                 $_SESSION['firstname'] = $row["firstname"];
                 $_SESSION['lastname'] = $row["lastname"];
-                header("Location: ../front-end/game.php?login=succes");
+                header("Location: ../front-end/dashboard.php?login=succes");
                 exit();
             }
             else

@@ -67,7 +67,7 @@ new Vue({
         // set the end game message 
         if(this.tries === 0){
           this.messages.endGame = "End of game. " + "Your score is: " + this.messages.scoreText;
-          confirmBox = confirm("Game ended");
+          confirmBox = confirm("Game ended Your score is: " + this.score);
           if(confirmBox == true){
             console.log("Okay clicked");
         
@@ -83,6 +83,8 @@ new Vue({
 
             this.tries = 10;
             this.score = 0;
+
+            window.location.href = "../../front-end/games.php";
           }
           else
             console.log("Cancel clicked");
@@ -99,6 +101,8 @@ new Vue({
 
             this.tries = 10;
             this.score = 0;
+
+            window.location.href = "../../front-end/games.php";
         }
       }
     }

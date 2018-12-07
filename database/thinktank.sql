@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2018 at 03:21 AM
+-- Generation Time: Dec 07, 2018 at 05:08 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 5.6.38
 
@@ -34,16 +34,19 @@ CREATE TABLE `game_scores` (
   `game_id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
   `game_title` varchar(1024) DEFAULT NULL,
-  `score` double DEFAULT NULL
+  `score` double DEFAULT NULL,
+  `played` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `game_scores`
 --
 
-INSERT INTO `game_scores` (`game_id`, `user_id`, `game_title`, `score`) VALUES
-(1, 5, 'Light-reflex-Game', 5),
-(2, 6, 'Light-reflex-Game', 6);
+INSERT INTO `game_scores` (`game_id`, `user_id`, `game_title`, `score`, `played`) VALUES
+(27, 5, 'Light-reflex-Game', 8, 1),
+(28, 5, 'Balloon-math-Game', 63, 1),
+(29, 6, 'Light-reflex-Game', 3, 1),
+(31, 6, 'Balloon-math-Game', 7, 1);
 
 -- --------------------------------------------------------
 
@@ -92,13 +95,13 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `game_scores`
 --
 ALTER TABLE `game_scores`
-  MODIFY `game_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `game_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables

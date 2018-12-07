@@ -16,7 +16,7 @@ session_start();
       
 
       <script
-        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        src="../../libs/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous">
       </script>
@@ -37,7 +37,7 @@ session_start();
     <div>Tries left: {{messages.triesLeft}}</div>
   </div>
 </div>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js'></script>
+  <script src='../../libs/vue.min.js'></script>
 
   
 

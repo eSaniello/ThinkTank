@@ -22,7 +22,7 @@ if(isset($_SESSION["user_name"])){
 
         }
         else{
-            $sql_insert = "INSERT INTO game_scores (user_id, game_title, score) VALUES (" .$_SESSION['user_id']. ", 'Light-reflex-Game', '$score')";
+            $sql_insert = "INSERT INTO game_scores (user_id, game_title, score, played) VALUES (" .$_SESSION['user_id']. ", 'Light-reflex-Game', '$score', true)";
             $query_insert = mysqli_query($connection,$sql_insert);
             echo  "Score entered successfully!";
         }
