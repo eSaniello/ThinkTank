@@ -12,7 +12,7 @@
 ## Beoordeling:
 **Cijfer: 10**
 
-##How to install:
+## How to install:
 * Pull project
 * Import database/tinktank.sql file in PhpMyAdmin
 * Verander db credentials in database/dbh.php
