@@ -16,3 +16,4 @@
 * Pull project
 * Import database/tinktank.sql file in PhpMyAdmin
 * Verander db credentials in database/dbh.php
+* open index.php met local server
